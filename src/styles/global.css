@@ -1,0 +1,419 @@
+:root {
+  --brand-orange: #e85d3a;
+  --brand-yellow: #f4c542;
+  --brand-yellow-soft: rgba(244, 197, 66, 0.18);
+  --page-bg: #fbf7f0;
+  --page-text: #2e2e2e;
+  --page-text-soft: #5c5148;
+  --page-border: rgba(46, 46, 46, 0.14);
+  --page-card: #f8f2ea;
+  --shadow-soft: rgba(46, 46, 46, 0.08);
+  --header-bg-scrolled: #fbf7f0;
+  --header-text-scrolled: #2e2e2e;
+  --header-border-scrolled: #e8e0d6;
+  --color-primary: #8b1a1a;
+  --color-primary-hover: #a52a2a;
+  --color-secondary: #f4c542;
+}
+
+.dark {
+  --page-bg: #1a1a1a;
+  --page-text: #e4e0d8;
+  --page-text-soft: #c8c1b6;
+  --page-border: rgba(228, 224, 216, 0.16);
+  --page-card: #231f1d;
+  --shadow-soft: rgba(0, 0, 0, 0.22);
+  --header-bg-scrolled: #1a1a1a;
+  --header-text-scrolled: #e4e0d8;
+  --header-border-scrolled: #2e2e2e;
+  --color-primary: #e85d3a;
+  --color-primary-hover: #f4784a;
+  --color-secondary: #f4c542;
+}
+
+html {
+  background: var(--page-bg);
+  color: var(--page-text);
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--page-text);
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+:where(h1, h2, h3, h4) {
+  font-variant: small-caps;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  font-family: "Geologica", "Inter", "Segoe UI", sans-serif;
+  text-wrap: balance;
+}
+
+.hero,
+[data-hero-text] {
+  color: #ffffff !important;
+}
+
+.hero h1,
+.hero h2,
+.hero p,
+.hero a,
+.hero span,
+[data-hero-text] h1,
+[data-hero-text] h2,
+[data-hero-text] p,
+[data-hero-text] a,
+[data-hero-text] span {
+  color: #ffffff !important;
+  font-variant: normal !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.hero h1,
+[data-hero-text] h1 {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-clip: unset !important;
+}
+
+.hero a,
+.hero .hero-links a,
+[data-hero-text] a {
+  font-size: 0.875rem !important;
+}
+
+.hero *,
+[data-hero-text] * {
+  font-variant: normal !important;
+}
+
+h1,
+h2,
+strong,
+b,
+.prose-article h1,
+.prose-article h2,
+article h1,
+article h2 {
+  color: var(--color-primary);
+}
+
+h1,
+.prose-article h1,
+article h1 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 6px 24px rgba(232, 93, 58, 0.12);
+}
+
+h2,
+.prose-article h2,
+article h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.9rem;
+  font-size: clamp(1.8rem, 2.8vw, 2.2rem);
+  font-weight: 700;
+  text-shadow: 0 4px 16px rgba(232, 93, 58, 0.08);
+}
+
+h3,
+.prose-article h3,
+article h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
+  font-weight: 700;
+  color: var(--page-text);
+  text-shadow: 0 4px 16px rgba(46, 46, 46, 0.05);
+}
+
+h4,
+.prose-article h4,
+article h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-size: clamp(1.1rem, 1.6vw, 1.2rem);
+  font-weight: 700;
+  color: var(--page-text-soft);
+  text-shadow: none;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+em,
+i {
+  color: var(--brand-yellow);
+  opacity: 0.9;
+}
+
+a {
+  color: #8b1a1a;
+  text-decoration: none;
+  position: relative;
+  transition:
+    color 180ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.dark a {
+  color: #e85d3a;
+}
+
+a:hover,
+a:focus-visible {
+  color: #a52a2a;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.dark a:hover,
+.dark a:focus-visible {
+  color: #f4784a;
+}
+
+a:active {
+  transform: scale(0.98);
+}
+
+a:visited {
+  opacity: 0.7;
+}
+
+.prose-article a,
+article a,
+main a,
+.content a {
+  text-decoration: none;
+}
+
+.prose-article a::after,
+article a::after,
+main a::after,
+.content a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -2px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand-yellow) 0%, #a52a2a 100%);
+  transition: right 220ms ease, left 220ms ease;
+  border-radius: 999px;
+}
+
+.dark .prose-article a::after,
+.dark article a::after,
+.dark main a::after,
+.dark .content a::after {
+  background: linear-gradient(90deg, var(--brand-yellow) 0%, #f4784a 100%);
+}
+
+.prose-article a:hover::after,
+.prose-article a:focus-visible::after,
+article a:hover::after,
+article a:focus-visible::after,
+main a:hover::after,
+main a:focus-visible::after,
+.content a:hover::after,
+.content a:focus-visible::after {
+  left: 0;
+  right: 0;
+}
+
+blockquote {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1.2rem 1.25rem 1.2rem 2.2rem;
+  border-left: 3px solid var(--brand-yellow);
+  background: color-mix(in srgb, var(--brand-yellow) 12%, transparent);
+  color: var(--page-text);
+  font-family: "Geologica", "Inter", "Segoe UI", sans-serif;
+  font-style: italic;
+  box-shadow: inset 0 0 0 1px rgba(244, 197, 66, 0.12);
+}
+
+blockquote::before {
+  content: "“";
+  position: absolute;
+  top: -0.45rem;
+  left: 0.5rem;
+  font-size: clamp(4rem, 7vw, 7rem);
+  line-height: 1;
+  font-family: "Geologica", "Inter", sans-serif;
+  color: var(--brand-yellow);
+  opacity: 0.3;
+}
+
+blockquote p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+blockquote cite,
+blockquote footer,
+blockquote .author {
+  display: block;
+  margin-top: 0.8rem;
+  color: var(--page-text-soft);
+  font-size: 0.9rem;
+  font-style: normal;
+}
+
+.site-brand-mark {
+  display: inline-block;
+  font-variant: small-caps;
+  font-family: "Geologica", "Inter", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .site-brand-mark {
+    font-size: 1.4rem;
+  }
+}
+
+:root {
+  --paper-bg: var(--page-bg);
+  --paper-text: var(--page-text);
+  --paper-muted: var(--page-text-soft);
+}
+
+.dark {
+  --paper-bg: var(--page-bg);
+  --paper-text: var(--page-text);
+  --paper-muted: var(--page-text-soft);
+}
+
+/* ============================================
+   HEADER - CORRECCIÓN DEFINITIVA (AL FINAL)
+   ============================================ */
+
+header {
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* HOME: sin scroll = SIEMPRE transparente + BLANCO */
+header[data-home-header="true"][data-scrolled="false"] {
+  background: transparent !important;
+  border-bottom-color: transparent !important;
+}
+
+header[data-home-header="true"][data-scrolled="false"] a,
+header[data-home-header="true"][data-scrolled="false"] span,
+header[data-home-header="true"][data-scrolled="false"] button,
+header[data-home-header="true"][data-scrolled="false"] .home-header-brand,
+header[data-home-header="true"][data-scrolled="false"] .home-header-link,
+header[data-home-header="true"][data-scrolled="false"] .home-header-action,
+header[data-home-header="true"][data-scrolled="false"] .site-brand-mark {
+  color: #FFFFFF !important;
+}
+
+header[data-home-header="true"][data-scrolled="false"] .home-header-link:hover,
+header[data-home-header="true"][data-scrolled="false"] .home-header-link:focus-visible,
+header[data-home-header="true"][data-scrolled="false"] .home-header-action:hover,
+header[data-home-header="true"][data-scrolled="false"] .home-header-action:focus-visible,
+header[data-home-header="true"][data-scrolled="false"] a:hover,
+header[data-home-header="true"][data-scrolled="false"] a:focus-visible,
+header[data-home-header="true"][data-scrolled="false"] button:hover,
+header[data-home-header="true"][data-scrolled="false"] button:focus-visible {
+  color: rgba(255, 255, 255, 0.96) !important;
+  opacity: 1 !important;
+}
+
+header[data-home-header="true"][data-scrolled="false"] .home-header-action:hover,
+header[data-home-header="true"][data-scrolled="false"] .home-header-action:focus-visible {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Forzar en tema claro con mayor especificidad */
+html:not(.dark) header[data-home-header="true"][data-scrolled="false"] {
+  background: transparent !important;
+}
+
+html:not(.dark) header[data-home-header="true"][data-scrolled="false"] a,
+html:not(.dark) header[data-home-header="true"][data-scrolled="false"] span,
+html:not(.dark) header[data-home-header="true"][data-scrolled="false"] button,
+html:not(.dark) header[data-home-header="true"][data-scrolled="false"] .home-header-brand {
+  color: #FFFFFF !important;
+}
+
+/* Forzar en tema oscuro (por si acaso) */
+html.dark header[data-home-header="true"][data-scrolled="false"] {
+  background: transparent !important;
+}
+
+html.dark header[data-home-header="true"][data-scrolled="false"] a,
+html.dark header[data-home-header="true"][data-scrolled="false"] span,
+html.dark header[data-home-header="true"][data-scrolled="false"] button,
+html.dark header[data-home-header="true"][data-scrolled="false"] .home-header-brand {
+  color: #FFFFFF !important;
+}
+
+/* HOME: con scroll = según tema */
+header[data-home-header="true"][data-scrolled="true"] {
+  background: var(--header-bg-scrolled) !important;
+  border-bottom-color: var(--header-border-scrolled) !important;
+  backdrop-filter: blur(8px);
+}
+
+header[data-home-header="true"][data-scrolled="true"] a,
+header[data-home-header="true"][data-scrolled="true"] span,
+header[data-home-header="true"][data-scrolled="true"] button,
+header[data-home-header="true"][data-scrolled="true"] .home-header-brand {
+  color: var(--header-text-scrolled) !important;
+}
+
+/* OTRAS PÁGINAS: siempre según tema */
+header:not([data-home-header="true"]) {
+  background: var(--header-bg-scrolled) !important;
+  border-bottom-color: var(--header-border-scrolled) !important;
+}
+
+header:not([data-home-header="true"]) a,
+header:not([data-home-header="true"]) span,
+header:not([data-home-header="true"]) button,
+header:not([data-home-header="true"]) .home-header-brand {
+  color: var(--header-text-scrolled) !important;
+}
+
+/* Asegurar que el hero tenga altura completa */
+.hero {
+  min-height: 100svh !important;
+  height: 100svh !important;
+}
+
+/* Asegurar que la imagen cubra todo el hero */
+.hero img {
+  object-fit: cover !important;
+  object-position: center !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* El contenido del hero debe estar por encima */
+.hero .relative.z-10 {
+  z-index: 10 !important;
+}

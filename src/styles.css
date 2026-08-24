@@ -155,25 +155,6 @@
 }
 
 @layer components {
-  .skip-link {
-    position: fixed;
-    left: 1rem;
-    top: 1rem;
-    z-index: 100;
-    border-radius: 6px;
-    background: var(--color-foreground);
-    color: var(--color-background);
-    padding: 0.65rem 0.85rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    transform: translateY(-160%);
-    transition: transform 150ms ease;
-  }
-
-  .skip-link:focus-visible {
-    transform: translateY(0);
-  }
-
   [data-home-header] {
     box-shadow: none;
     backdrop-filter: none;

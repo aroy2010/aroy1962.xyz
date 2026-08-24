@@ -1,31 +1,50 @@
+// ============================================================
+// 📌 CONFIGURACIÓN DEL SITIO
+// ============================================================
+
 const siteUrl = (
   import.meta.env.SITE_URL ||
   import.meta.env.PUBLIC_SITE_URL ||
-  "https://quietpages-eta.vercel.app"
+  "https://www.aroy1962.xyz" // ✅ Dominio principal con www
 ).replace(/\/$/, "");
 
 export const SITE = {
-  name: "Quiet Pages",
+  name: "La Caverna de Platón",
   description:
-    "An independent magazine on writing, design, and the slow web. Published occasionally, read closely.",
-  url: siteUrl,
-  locale: "en-US",
-  language: "en",
-  repositoryUrl: "https://github.com/andreialba/quietpages",
+    "Los griegos nos advirtieron hace 2,500 años que debíamos buscar la verdad y compartirla. Hoy compartimos sombras y el poder material neutraliza nuestra humanidad.",
+  url: "https://www.aroy1962.xyz", // ✅ Dominio con www
+  locale: "es-ES",
+  language: "es",
+  repositoryUrl: "https://github.com/aroy2010/aroy1962.xyz", // ✅ Repositorio correcto
 };
+
+// ============================================================
+// 📌 MENÚ DE NAVEGACIÓN
+// ============================================================
 
 export const NAVIGATION = [
-  { to: "/", label: "Home" },
-  { to: "/blog", label: "Writing" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "Inicio" },
+  { to: "/category/la-cueva", label: "La Cueva" },
+  { to: "/category/las-sombras", label: "Las Sombras" },
+  { to: "/category/el-exterior", label: "El Exterior" },
+  { to: "/category/el-sol", label: "El Sol" },
+  { to: "/category/el-regreso", label: "El Regreso" },
+  { to: "/about", label: "Acerca de" },
 ];
 
+// ============================================================
+// 📌 INFORMACIÓN DE CONTACTO
+// ============================================================
+
 export const CONTACT = {
-  email: "hello@example.com",
-  socialHandle: "@quietpages",
-  socialUrl: "https://x.com/quietpages",
+  email: "adrielolorteguiyzu@gmail.com", // ✅ Correo corregido
+  socialHandle: "@lacavernadeplaton",
+  socialUrl: "https://x.com/lacavernadeplaton", // ✅ Si no tienes, cambia por tu URL real
 };
+
+// ============================================================
+// 📌 FORMULARIOS (pendientes de configuración)
+// ============================================================
 
 export const FORMS = {
   contact: {
@@ -40,55 +59,57 @@ export const FORMS = {
   },
 };
 
+// ============================================================
+// 📌 REDES SOCIALES
+// ============================================================
+
 export const SOCIAL_LINKS = [
-  { href: "/rss.xml", label: "RSS feed", icon: "rss" },
-  { href: CONTACT.socialUrl, label: `${SITE.name} on X`, icon: "twitter" },
-  { href: SITE.repositoryUrl, label: `${SITE.name} on GitHub`, icon: "github" },
-  { href: `mailto:${CONTACT.email}`, label: "Email", icon: "mail" },
+  { href: "/rss.xml", label: "Feed RSS", icon: "rss" },
+  { href: "https://x.com/lacavernadeplaton", label: "La Caverna en X", icon: "twitter" },
+  { href: "https://github.com/aroy2010/aroy1962.xyz", label: "La Caverna en GitHub", icon: "github" },
+  { href: "mailto:adrielolorteguiyzu@gmail.com", label: "Email", icon: "mail" },
 ];
+
+// ============================================================
+// 📌 AUTORES DEL BLOG
+// ============================================================
 
 export const authors = [
   {
-    slug: "elena-march",
-    name: "Elena March",
-    bio: "Writer & editor covering design, craft, and slow technology.",
+    slug: "adriel-ortegui",
+    name: "Adriel Orteguí",
+    bio: "Escritor y pensador. Fundador de 'La Caverna de Platón', un espacio de reflexión humanista sobre el mundo moderno.",
     longBio:
-      "Elena March writes about the quiet edges of design and technology. Previously an editor at two small magazines, she now publishes essays and field notes from a desk overlooking the harbour.",
-    avatar: "/avatars/elena-march.svg",
+      "Adriel Orteguí es el creador de 'La Caverna de Platón', un proyecto que busca recuperar la tradición del pensamiento crítico en la era digital. Sus escritos exploran la tensión entre la tecnología y la condición humana, inspirándose en la filosofía clásica y las ciencias sociales.",
+    avatar: "/avatars/adriel-ortegui.svg", // ✅ Puedes cambiar esta ruta por tu avatar personalizado
   },
-  {
-    slug: "samuel-okafor",
-    name: "Samuel Okafor",
-    bio: "Software engineer with a soft spot for typography and the open web.",
-    longBio:
-      "Samuel builds tools for writers and reads more than he ships. He believes the best interfaces are the ones you don't notice.",
-    avatar: "/avatars/samuel-okafor.svg",
-  },
-  {
-    slug: "mira-iwasaki",
-    name: "Mira Iwasaki",
-    bio: "Photographer and essayist based between Kyoto and Lisbon.",
-    longBio:
-      "Mira's work sits at the intersection of place, memory, and the everyday object. Her essays have appeared in a number of small but loved publications.",
-    avatar: "/avatars/mira-iwasaki.svg",
-  },
+  // ✅ He eliminado los autores ficticios; puedes añadir colaboradores si los tienes
 ];
+
+// ============================================================
+// 📌 CATEGORÍAS (coinciden con los menús)
+// ============================================================
 
 export const categories = [
-  { slug: "essays", name: "Essays" },
-  { slug: "design", name: "Design" },
-  { slug: "engineering", name: "Engineering" },
-  { slug: "field-notes", name: "Field Notes" },
-  { slug: "interviews", name: "Interviews" },
+  { slug: "la-cueva", name: "La Cueva" },
+  { slug: "las-sombras", name: "Las Sombras" },
+  { slug: "la-salida", name: "La Salida" },
+  { slug: "el-exterior", name: "El Exterior" },
+  { slug: "el-sol", name: "El Sol" },
+  { slug: "el-regreso", name: "El Regreso" },
 ];
 
+// ============================================================
+// 📌 ETIQUETAS (TAGS) - Puedes ampliarlas según necesites
+// ============================================================
+
 export const tags = [
-  { slug: "writing", name: "Writing" },
-  { slug: "typography", name: "Typography" },
-  { slug: "minimalism", name: "Minimalism" },
-  { slug: "tools", name: "Tools" },
-  { slug: "travel", name: "Travel" },
-  { slug: "process", name: "Process" },
-  { slug: "web", name: "Web" },
-  { slug: "books", name: "Books" },
+  { slug: "filosofia", name: "Filosofía" },
+  { slug: "humanismo", name: "Humanismo" },
+  { slug: "tecnologia", name: "Tecnología" },
+  { slug: "sociedad", name: "Sociedad" },
+  { slug: "politica", name: "Política" },
+  { slug: "ciencia", name: "Ciencia" },
+  { slug: "arte", name: "Arte" },
+  { slug: "reflexiones", name: "Reflexiones" },
 ];

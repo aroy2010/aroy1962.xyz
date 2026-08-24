@@ -13,12 +13,16 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.0",
+    "@fontsource/geologica": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
     "@tailwindcss/vite": "^4.3.1",
     "astro": "^7.0.4",
     "tailwindcss": "^4.3.1"
   },
   "devDependencies": {
-    "prettier": "^3.8.4",
+    "fs-extra": "^11.4.0",
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
     "vite": "^8.1.2"
   }
 }
