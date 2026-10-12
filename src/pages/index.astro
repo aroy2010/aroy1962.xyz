@@ -98,17 +98,17 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
     <div class="mx-auto max-w-6xl px-5 py-16">
       <div class="mb-6 flex items-center justify-between">
         <div class="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-          Featured
+          Destacado
         </div>
         <a href="/blog" class="text-xs text-muted-foreground hover:text-foreground"
-          >All writing &rarr;</a
+          >Sigue la luz &rarr;</a
         >
       </div>
       <article class="grid gap-10 lg:grid-cols-2">
         <a
           href={`/blog/${featured.slug}`}
           class="group block"
-          aria-label={`Read ${featured.title}`}
+          aria-label={`Leer ${featured.title}`}
         >
           <div class="aspect-[4/3] overflow-hidden rounded-md bg-muted">
             {
@@ -170,13 +170,13 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
                 </>
               )
             }
-            <span>{featured.readingTime} min read</span>
+            <span>{featured.readingTime} min de lectura</span>
           </div>
           <a
             href={`/blog/${featured.slug}`}
             class="mt-6 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
           >
-            Read the essay <Icon name="arrow-right" class="h-3.5 w-3.5" />
+            Leer el ensayo <Icon name="arrow-right" class="h-3.5 w-3.5" />
           </a>
         </div>
       </article>
@@ -185,14 +185,14 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
 
   <section class="mx-auto max-w-6xl px-5 py-16" data-home-latest>
     <div class="flex flex-wrap items-center justify-between gap-4">
-      <h2 class="font-serif text-2xl font-semibold">Latest</h2>
+      <h2 class="font-serif text-2xl font-semibold">Recientes</h2>
       <div class="flex flex-wrap gap-2">
         <button
           type="button"
           data-home-filter=""
           class="rounded-full border px-3 py-1 text-xs transition-colors border-foreground bg-foreground text-background"
         >
-          All
+          Todo
         </button>
         {
           categories.map((category) => (
@@ -213,7 +213,7 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
       class="mt-12 rounded-md border border-dashed border-border py-16 text-center text-muted-foreground"
       hidden
     >
-      Nothing here yet in this section.
+      Aún no hay publicaciones en esta sección.
     </div>
 
     <div class="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -225,7 +225,7 @@ const latest = (await sortedPosts()).filter((post) => post.slug !== featured.slu
         href="/blog"
         class="inline-flex items-center gap-2 rounded-md border border-border px-5 py-2.5 text-sm font-medium hover:bg-muted"
       >
-        Browse the archive <Icon name="arrow-right" class="h-3.5 w-3.5" />
+        Explore el archivo <Icon name="arrow-right" class="h-3.5 w-3.5" />
       </a>
     </div>
   </section>

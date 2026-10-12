@@ -30,7 +30,7 @@ export async function GET() {
     `    <title>${esc(SITE.name)}</title>`,
     `    <link>${BASE_URL}/</link>`,
     `    <description>${esc(SITE.description)}</description>`,
-    "    <language>en-us</language>",
+    "    <language>es-es</language>",
     ...items,
     "  </channel>",
     "</rss>",

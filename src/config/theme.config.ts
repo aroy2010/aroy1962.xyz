@@ -64,7 +64,7 @@ export const FORMS = {
 // ============================================================
 
 export const SOCIAL_LINKS = [
-  { href: "/rss.xml", label: "Feed RSS", icon: "rss" },
+  { href: "/rss.xml", label: "Fuente RSS", icon: "rss" },
   { href: "https://x.com/lacavernadeplaton", label: "La Caverna en X", icon: "twitter" },
   { href: "https://github.com/aroy2010/aroy1962.xyz", label: "La Caverna en GitHub", icon: "github" },
   { href: "mailto:adrielolorteguiyzu@gmail.com", label: "Email", icon: "mail" },

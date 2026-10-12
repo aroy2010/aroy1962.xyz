@@ -25,7 +25,7 @@ const iconClass = isHome
       </span>
     </a>
 
-    <nav class="hidden items-center gap-8 md:flex" aria-label="Primary navigation">
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Navegación principal">
       {
         NAVIGATION.map((item) => {
           const exact = item.to === '/';
@@ -47,24 +47,24 @@ const iconClass = isHome
       <button
         type="button"
         data-search-toggle
-        aria-label="Search"
+        aria-label="Buscar"
         aria-controls="site-search"
         aria-expanded="false"
         class={iconClass}
       >
         <Icon name="search" class="h-4 w-4" />
       </button>
-      <a href="/rss.xml" aria-label="RSS feed" class={`${iconClass} hidden sm:inline-flex`}>
+      <a href="/rss.xml" aria-label="Fuente RSS" class={`${iconClass} hidden sm:inline-flex`}>
         <Icon name="rss" class="h-4 w-4" />
       </a>
-      <button type="button" data-theme-toggle aria-label="Toggle dark mode" class={iconClass}>
+      <button type="button" data-theme-toggle aria-label="Cambiar al modo oscuro" class={iconClass}>
         <span data-theme-icon="moon"><Icon name="moon" class="h-4 w-4" /></span>
         <span data-theme-icon="sun" hidden><Icon name="sun" class="h-4 w-4" /></span>
       </button>
       <button
         type="button"
         data-menu-toggle
-        aria-label="Menu"
+        aria-label="Menú"
         aria-controls="mobile-menu"
         aria-expanded="false"
         class={`${iconClass} md:hidden`}
@@ -85,8 +85,8 @@ const iconClass = isHome
       <input
         data-search-input
         name="q"
-        aria-label="Search essays, field notes, interviews"
-        placeholder="Search essays, field notes, interviews..."
+        aria-label="Buscar ensayos, notas de campo y posts"
+        placeholder="Buscar ensayos, notas de campo y posts..."
         class="w-full border-0 bg-transparent py-2 font-serif text-lg outline-none placeholder:text-muted-foreground"
       />
     </form>
@@ -98,7 +98,7 @@ const iconClass = isHome
     class="border-t border-border/60 bg-background text-foreground md:hidden"
     hidden
   >
-    <nav class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3" aria-label="Mobile navigation">
+    <nav class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3" aria-label="Navegación móvil">
       {
         NAVIGATION.map((item) => {
           const exact = item.to === '/';

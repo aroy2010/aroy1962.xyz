@@ -9,15 +9,15 @@ const posts = await sortedPosts();
 ---
 
 <BaseLayout
-  title={`Archive - ${SITE.name}`}
-  description="Every essay, field note, and interview we've published. Search and filter by category or tag."
+  title={`Archivo - ${SITE.name}`}
+  description="Todo lo publicado: ensayos, notas de campo y entrevistas. Busca y filtra por categoría o etiqueta."
   canonical="/blog"
 >
   <div class="mx-auto max-w-4xl px-5 py-12" data-archive>
-    <Breadcrumbs items={[{ label: "Home", to: "/" }, { label: "Archive" }]} />
-    <h1 class="mt-4 font-serif text-4xl font-semibold sm:text-5xl">The archive</h1>
+    <Breadcrumbs items={[{ label: "Inicio", to: "/" }, { label: "Archivo" }]} />
+    <h1 class="mt-4 font-serif text-4xl font-semibold sm:text-5xl">Archivo</h1>
     <p class="mt-3 max-w-xl text-muted-foreground">
-      Every piece we've published. {posts.length} essays, field notes, and interviews.
+      Todo lo publicado. {posts.length} ensayos, notas de campo y entrevistas.
     </p>
 
     <form data-archive-search class="mt-8 flex items-center gap-2 border-b border-border pb-2">
@@ -25,8 +25,8 @@ const posts = await sortedPosts();
       <input
         data-archive-query
         name="q"
-        aria-label="Search the archive"
-        placeholder="Search the archive..."
+        aria-label="Buscar en el archivo"
+        placeholder="Buscar en el archivo..."
         class="w-full border-0 bg-transparent py-2 outline-none placeholder:text-muted-foreground"
       />
       <button
@@ -35,14 +35,14 @@ const posts = await sortedPosts();
         class="text-xs text-muted-foreground hover:text-foreground"
         hidden
       >
-        Clear
+        Limpiar
       </button>
     </form>
 
     <div class="mt-6 space-y-4 text-sm">
       <div class="flex flex-wrap items-center gap-2">
-        <span class="text-xs uppercase tracking-wider text-muted-foreground">Categories</span>
-        <a data-category-filter="" href="/blog" class="rounded-full border px-3 py-1 text-xs">All</a>
+        <span class="text-xs uppercase tracking-wider text-muted-foreground">Categorías</span>
+        <a data-category-filter="" href="/blog" class="rounded-full border px-3 py-1 text-xs">Todo</a>
         {
           categories.map((category) => (
             <a data-category-filter={category.slug} href={`/categories/${category.slug}`} class="rounded-full border px-3 py-1 text-xs">
@@ -52,7 +52,7 @@ const posts = await sortedPosts();
         }
       </div>
       <div class="flex flex-wrap items-center gap-2">
-        <span class="text-xs uppercase tracking-wider text-muted-foreground">Tags</span>
+        <span class="text-xs uppercase tracking-wider text-muted-foreground">Etiquetas</span>
         {
           tags.map((tag) => (
             <a data-tag-filter={tag.slug} href={`/tags/${tag.slug}`} class="rounded-full border px-2.5 py-0.5 text-xs">
@@ -66,8 +66,8 @@ const posts = await sortedPosts();
     <div data-archive-count class="mt-6 text-sm text-muted-foreground"></div>
 
     <div data-archive-empty class="mt-12 rounded-md border border-dashed border-border py-20 text-center" hidden>
-      <div class="font-serif text-lg">No matches</div>
-      <p class="mt-2 text-sm text-muted-foreground">Try a different word, or clear the filters.</p>
+      <div class="font-serif text-lg">Sin coincidencias</div>
+      <p class="mt-2 text-sm text-muted-foreground">Prueba con otra palabra o limpia los filtros.</p>
     </div>
 
     <div data-archive-list>
@@ -149,13 +149,13 @@ const posts = await sortedPosts();
       cards.forEach((card) => (card.hidden = true));
       matches.slice(0, visibleCount).forEach((card) => (card.hidden = false));
 
-      count.textContent = `${matches.length} ${matches.length === 1 ? "result" : "results"}${state.q ? ` for "${state.q}"` : ""}`;
+      count.textContent = `${matches.length} ${matches.length === 1 ? "resultado" : "resultados"}${state.q ? ` para "${state.q}"` : ""}`;
       empty.hidden = matches.length > 0;
 
       const totalPages = Math.max(1, Math.ceil(matches.length / pageSize));
       moreWrap.hidden = visibleCount >= matches.length;
-      more.textContent = `Load more (${matches.length - visibleCount} remaining)`;
-      pageText.textContent = `Page ${state.page} of ${totalPages}`;
+      more.textContent = `Cargar más (${matches.length - visibleCount} restantes)`;
+      pageText.textContent = `Página ${state.page} de ${totalPages}`;
 
       applyLinkState(categoryLinks, state.cat, activeCategory, inactiveCategory, "data-category-filter");
       applyLinkState(tagLinks, state.tag, activeTag, inactiveTag, "data-tag-filter");

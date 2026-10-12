@@ -2,33 +2,43 @@
   --brand-orange: #e85d3a;
   --brand-yellow: #f4c542;
   --brand-yellow-soft: rgba(244, 197, 66, 0.18);
-  --page-bg: #fbf7f0;
-  --page-text: #2e2e2e;
-  --page-text-soft: #5c5148;
-  --page-border: rgba(46, 46, 46, 0.14);
-  --page-card: #f8f2ea;
+  --support-slate: #3b3b4a;
+  --burgundy: #8b1a1a;
+  --page-bg: var(--background);
+  --page-text: var(--foreground);
+  --page-text-soft: var(--muted-foreground);
+  --page-border: color-mix(in srgb, var(--support-slate) 24%, transparent);
+  --page-card: var(--card);
   --shadow-soft: rgba(46, 46, 46, 0.08);
-  --header-bg-scrolled: #fbf7f0;
-  --header-text-scrolled: #2e2e2e;
-  --header-border-scrolled: #e8e0d6;
-  --color-primary: #8b1a1a;
-  --color-primary-hover: #a52a2a;
-  --color-secondary: #f4c542;
+  --header-bg-scrolled: var(--background);
+  --header-text-scrolled: var(--foreground);
+  --header-border-scrolled: var(--support-slate);
+  --color-primary: var(--primary);
+  --color-primary-hover: color-mix(in srgb, var(--primary) 82%, var(--foreground) 18%);
+  --color-secondary: var(--secondary);
+  --heading-primary: var(--burgundy);
+  --heading-secondary: var(--brand-orange);
+  --heading-tertiary: var(--support-slate);
+  --heading-quaternary: #2e2e2e;
 }
 
 .dark {
-  --page-bg: #1a1a1a;
-  --page-text: #e4e0d8;
-  --page-text-soft: #c8c1b6;
-  --page-border: rgba(228, 224, 216, 0.16);
-  --page-card: #231f1d;
+  --page-bg: var(--background);
+  --page-text: var(--foreground);
+  --page-text-soft: var(--muted-foreground);
+  --page-border: color-mix(in srgb, var(--support-slate) 68%, transparent);
+  --page-card: var(--card);
   --shadow-soft: rgba(0, 0, 0, 0.22);
-  --header-bg-scrolled: #1a1a1a;
-  --header-text-scrolled: #e4e0d8;
-  --header-border-scrolled: #2e2e2e;
-  --color-primary: #e85d3a;
-  --color-primary-hover: #f4784a;
-  --color-secondary: #f4c542;
+  --header-bg-scrolled: var(--background);
+  --header-text-scrolled: var(--foreground);
+  --header-border-scrolled: var(--support-slate);
+  --color-primary: var(--primary);
+  --color-primary-hover: color-mix(in srgb, var(--primary) 82%, var(--foreground) 18%);
+  --color-secondary: var(--secondary);
+  --heading-primary: var(--brand-orange);
+  --heading-secondary: var(--brand-yellow);
+  --heading-tertiary: var(--page-text);
+  --heading-quaternary: var(--page-text);
 }
 
 html {
@@ -97,13 +107,19 @@ p {
 }
 
 h1,
-h2,
-strong,
-b,
 .prose-article h1,
+article h1 {
+  color: var(--heading-primary);
+}
+
+h2,
 .prose-article h2,
-article h1,
 article h2 {
+  color: var(--heading-secondary);
+}
+
+strong,
+b {
   color: var(--color-primary);
 }
 
@@ -114,10 +130,10 @@ article h1 {
   margin-bottom: 1rem;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 700;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: currentColor;
   text-shadow: 0 6px 24px rgba(232, 93, 58, 0.12);
 }
 
@@ -138,7 +154,7 @@ article h3 {
   margin-bottom: 0.75rem;
   font-size: clamp(1.4rem, 2vw, 1.6rem);
   font-weight: 700;
-  color: var(--page-text);
+  color: var(--heading-tertiary);
   text-shadow: 0 4px 16px rgba(46, 46, 46, 0.05);
 }
 
@@ -149,7 +165,7 @@ article h4 {
   margin-bottom: 0.6rem;
   font-size: clamp(1.1rem, 1.6vw, 1.2rem);
   font-weight: 700;
-  color: var(--page-text-soft);
+  color: var(--heading-quaternary);
   text-shadow: none;
 }
 
@@ -165,7 +181,7 @@ i {
 }
 
 a {
-  color: #8b1a1a;
+  color: var(--color-primary);
   text-decoration: none;
   position: relative;
   transition:
@@ -175,19 +191,19 @@ a {
 }
 
 .dark a {
-  color: #e85d3a;
+  color: var(--color-primary);
 }
 
 a:hover,
 a:focus-visible {
-  color: #a52a2a;
+  color: var(--color-primary-hover);
   transform: translateY(-1px);
   text-decoration: none;
 }
 
 .dark a:hover,
 .dark a:focus-visible {
-  color: #f4784a;
+  color: var(--color-primary-hover);
 }
 
 a:active {
@@ -215,7 +231,7 @@ main a::after,
   right: 100%;
   bottom: -2px;
   height: 2px;
-  background: linear-gradient(90deg, var(--brand-yellow) 0%, #a52a2a 100%);
+  background: linear-gradient(90deg, var(--brand-yellow) 0%, var(--color-primary) 100%);
   transition: right 220ms ease, left 220ms ease;
   border-radius: 999px;
 }
@@ -224,7 +240,7 @@ main a::after,
 .dark article a::after,
 .dark main a::after,
 .dark .content a::after {
-  background: linear-gradient(90deg, var(--brand-yellow) 0%, #f4784a 100%);
+  background: linear-gradient(90deg, var(--brand-yellow) 0%, var(--color-primary-hover) 100%);
 }
 
 .prose-article a:hover::after,
