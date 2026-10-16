@@ -77,10 +77,10 @@ export const SOCIAL_LINKS = [
 export const authors = [
   {
     slug: "adriel-ortegui",
-    name: "Adriel Orteguí",
+    name: "Adriel Olórtegui",
     bio: "Escritor y pensador. Fundador de 'La Caverna de Platón', un espacio de reflexión humanista sobre el mundo moderno.",
     longBio:
-      "Adriel Orteguí es el creador de 'La Caverna de Platón', un proyecto que busca recuperar la tradición del pensamiento crítico en la era digital. Sus escritos exploran la tensión entre la tecnología y la condición humana, inspirándose en la filosofía clásica y las ciencias sociales.",
+      "Adriel Olórtegui es el creador de 'La Caverna de Platón', un proyecto que busca recuperar la tradición del pensamiento crítico en la era digital. Sus escritos exploran la tensión entre la tecnología y la condición humana, inspirándose en la filosofía clásica y las ciencias sociales.",
     avatar: "/avatars/adriel-ortegui.svg", // ✅ Puedes cambiar esta ruta por tu avatar personalizado
   },
   // ✅ He eliminado los autores ficticios; puedes añadir colaboradores si los tienes
