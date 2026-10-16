@@ -176,8 +176,37 @@ b {
 
 em,
 i {
+  color: var(--burgundy);
+  opacity: 1;
+}
+
+.dark em,
+.dark i {
   color: var(--brand-yellow);
-  opacity: 0.9;
+}
+
+.site-footer {
+  background-color: color-mix(in srgb, var(--foreground) 8%, var(--background));
+}
+
+.footer-site-name {
+  color: var(--burgundy);
+  font-variant: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.dark .footer-site-name {
+  color: var(--brand-orange);
+}
+
+.contact-label {
+  color: color-mix(in srgb, var(--brand-orange) 68%, var(--foreground) 32%);
+  font-weight: 500;
+}
+
+.dark .contact-label {
+  color: color-mix(in srgb, var(--brand-yellow) 78%, var(--foreground) 22%);
 }
 
 a {

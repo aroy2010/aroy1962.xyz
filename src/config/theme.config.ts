@@ -24,11 +24,11 @@ export const SITE = {
 
 export const NAVIGATION = [
   { to: "/", label: "Inicio" },
-  { to: "/category/la-cueva", label: "La Cueva" },
-  { to: "/category/las-sombras", label: "Las Sombras" },
-  { to: "/category/el-exterior", label: "El Exterior" },
-  { to: "/category/el-sol", label: "El Sol" },
-  { to: "/category/el-regreso", label: "El Regreso" },
+  { to: "/categories/la-cueva", label: "La Cueva" },
+  { to: "/categories/las-sombras", label: "Las Sombras" },
+  { to: "/categories/el-exterior", label: "El Exterior" },
+  { to: "/categories/el-sol", label: "El Sol" },
+  { to: "/categories/el-regreso", label: "El Regreso" },
   { to: "/about", label: "Acerca de" },
 ];
 
